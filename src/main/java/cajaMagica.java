@@ -10,7 +10,7 @@
  */
 public class cajaMagica {
 
-    int dimension = 3;
+    int dimension = 5;
     int[][] arreglo;
 
     public cajaMagica() {
@@ -33,9 +33,9 @@ public class cajaMagica {
         int ubicacionCActual = ubicacionColumna;
 
         //Recorrer los numeros desde 2
-        for (int i = 2; i < (Math.pow(arreglo.length, 2)); i++) {
-            ubicacionFila--;
-            ubicacionColumna--;
+        for (int i = 2; i <= (Math.pow(arreglo.length, 2)); i++) {
+            ubicacionFila -= 1;
+            ubicacionColumna -= 1;
             //cuando se devuelve se sale de la matriz
             if (ubicacionFila < 0) {
                 ubicacionFila = arreglo.length - 1;
@@ -47,7 +47,6 @@ public class cajaMagica {
             if (arreglo[ubicacionFila][ubicacionColumna] == 0) {
                 arreglo[ubicacionFila][ubicacionColumna] = i;
             } else {
-                // si la celda esta ocupada el numero se debe poner una fila mas abajo de la celda previa
 
                 ubicacionFila = ubicacionFActual + 1;
                 ubicacionColumna = ubicacionCActual;
@@ -66,9 +65,9 @@ public class cajaMagica {
     public void mostrarArreglo() {
         for (int i = 0; i < arreglo.length; i++) {
             for (int j = 0; j < arreglo.length; j++) {
-                System.out.println(arreglo[i][j] + "\t");
+                System.out.println(arreglo[i][j] + "");
             }
-            System.out.println();
+            System.out.println("");
         }
 
     }
